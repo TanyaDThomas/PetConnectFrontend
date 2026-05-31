@@ -1,0 +1,140 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - PetConnectPartner</title>
+    <script type="importmap"></script>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/PetConnectPartner.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <header>
+
+        <nav class="navbar">
+            <!-- Logo -->
+            <a href="/" >
+            <div class="logo">
+                Pet<span>Connect</span>
+            </div>
+            </a>
+            <!-- Search -->
+         
+            <form class="search-bar" method="get" action="/Animals">
+
+                
+                <div class="input-group">
+                    <svg class="icon" viewBox="0 0 24 24">
+                        <path d="M12 2c-2 0-3.5 1.5-3.5 3.5S10 9 12 9s3.5-1.5 3.5-3.5S14 2 12 2zm6 7c-1.5 0-2.5 1-2.5 2.5S16.5 14 18 14s2.5-1 2.5-2.5S19.5 9 18 9zM6 9c-1.5 0-2.5 1 0-2.5S4.5 14 6 14s2.5-1 2.5-2.5S7.5 9 6 9zm6 3c-3 0-5 2-5 4.5V18h10v-1.5C17 14 15 12 12 12z" />
+                    </svg>
+
+                    <input type="text" name="AnimalTypeName" placeholder="Animal or keyword">
+                </div>
+
+                
+                <div class="input-group">
+                    <svg class="icon" viewBox="0 0 24 24">
+                        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z" />
+                    </svg>
+
+                    <input type="text" name="location" id="searchInput" placeholder="City or State">
+                </div>
+              
+
+                <div class="divider"></div>
+
+                <button type="submit" class="search-btn">
+                    <svg class="icon-white" viewBox="0 0 24 24">
+                        <path d="M10 2a8 8 0 105.3 14.3l4.7 4.7 1.4-1.4-4.7-4.7A8 8 0 0010 2z" />
+                    </svg>
+                    Search
+                </button>
+
+            </form>
+           
+        </nav>
+
+        @* BROWSE BAR *@
+
+        <div class="animal-filter-toggle">
+            <button id="animalToggle" type="button">
+                ▼ Browse Animal Types
+            </button>
+        </div>
+
+        <div id="animalMenu" class="animal-menu">
+            <a href="/Animals?AnimalTypeName=dog&location=">🐕 Dogs</a>
+            <a href="/Animals?AnimalTypeName=cat&location=">🐈 Cats</a>
+            <a href="/Animals?AnimalTypeName=bird&location=">🐦 Birds</a>
+            <a href="/Animals?AnimalTypeName=reptile&location=">🐢 Reptiles</a>
+            <a href="/Animals?AnimalTypeName=farm+animal&location=">🐎 Farm</a>
+            <a href="/Animals?AnimalTypeName=small+animal&location=">🐹 Small</a>
+            <a href="/Animals?AnimalTypeName=exotic+animal&location=">🦔 Exotics</a>
+            <a href="/Animals?AnimalTypeName=fish&location=">🐠 Aquatic</a>
+        </div>
+
+    </header>
+
+    <main class="container-fluid p-0">
+        @RenderBody()
+    </main>
+
+   
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2026 - PetConnect - </a>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
+
+
+
+
+<script>
+
+   
+document.getElementById("animalToggle")
+    .addEventListener("click", function () {
+
+    document
+        .getElementById("animalMenu")
+        .classList.toggle("show");
+});
+
+
+
+    document.addEventListener("DOMContentLoaded", function () {
+
+        if (!navigator.geolocation) return;
+
+        navigator.geolocation.getCurrentPosition(function (pos) {
+
+            fetch(`https://nominatim.openstreetmap.org/reverse?lat=${pos.coords.latitude}&lon=${pos.coords.longitude}&format=json`)
+                .then(r => r.json())
+                .then(data => {
+
+                    const city = data.address.city || data.address.town || "";
+                    const state = data.address.state || "";
+
+                    const input = document.getElementById("searchInput");
+
+                    if (input) {
+                        input.value = city && state
+                            ? `${city}, ${state}`
+                            : city || state;
+                    }
+                })
+                .catch(err => console.log("Geo error:", err));
+        });
+
+    });
+</script>

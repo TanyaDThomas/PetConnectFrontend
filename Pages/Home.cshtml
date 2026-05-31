@@ -1,0 +1,77 @@
+﻿@page "/"
+@model PetConnectPartner.Pages.HomeModel
+
+@{
+    ViewData["Title"] = "Pet Connect Animal Adoption";
+}
+
+<section class="hero">
+
+    <div class="hero-overlay"></div>
+
+    <div class="paw paw-1">🐾</div>
+    <div class="paw paw-2">🐾</div>
+    <div class="paw paw-3">🐾</div>
+    <div class="paw paw-4">🐾</div>
+
+    <div class="hero-content">
+
+        <h1>
+            Find your
+            <span>kindred</span>
+            spirit.
+        </h1>
+
+        <p>
+            Every shelter animal has a story.
+            Start yours by choosing a companion.
+        </p>
+
+        <div class="animal-categories">
+
+         
+
+            <a href="/Animals?AnimalTypeName=dog&location=" class="category-card">
+                <div class="emoji">🐕</div>
+                <span>Dogs</span>
+            </a>
+
+            <a href="/Animals?AnimalTypeName=cat&location=" class="category-card">
+                <div class="emoji">🐈</div>
+                <span>Cats</span>
+            </a>
+
+            <a href="/Animals?AnimalTypeName=bird&location=" class="category-card">
+                <div class="emoji">🐦</div>
+                <span>Birds</span>
+            </a>
+
+            <a href="/Animals?AnimalTypeName=fish&location=" class="category-card">
+                <div class="emoji">🐠</div>
+                <span>Aquatic</span>
+            </a>
+
+            <a href="/Animals?AnimalTypeName=farm+animal&location=" class="category-card">
+                <div class="emoji">🐎</div>
+                <span>Farm</span>
+            </a>
+
+            <a href="/Animals?AnimalTypeName=small_animal&location=" class="category-card">
+                <div class="emoji">🐹</div>
+                <span>Small Animals</span>
+            </a>
+
+            <a href="/Animals?AnimalTypeName=exotic+animal&location=" class="category-card">
+                <div class="emoji">🦔</div>
+                <span>Exotics</span>
+            </a>
+
+            <a href="/Animals?AnimalTypeName=reptile&location=" class="category-card">
+                <div class="emoji">🐢</div>
+                <span>Reptiles</span>
+            </a>
+
+        </div>
+
+    </div>
+

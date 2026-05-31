@@ -1,0 +1,38 @@
+﻿
+@page "/animals"
+@model PetConnectPartner.Pages.AnimalsModel
+
+
+@{
+    ViewData["Title"] = "Find a Pet";
+}
+
+<div class="pet-page">
+
+    <h1>Find Your Perfect Pet 🐾</h1>
+
+    <div class="pet-grid">
+        @foreach (var animal in Model.Animals)
+        {
+            <div class="pet-card">
+                @if (!string.IsNullOrWhiteSpace(animal.ImagePath))
+                {
+                    <img class="pet-image" src="https://localhost:7207/@animal.ImagePath" alt="@animal.Name" />
+                }
+                else
+                {
+                    <img class="pet-image" src="/images/placeholder.jpg" alt="No image available" />
+                }
+
+                <div class="pet-body">
+                    <div class="pet-name">@animal.Name</div>
+                    <div class="pet-meta">@animal.Breed · @animal.Age years old</div>
+                    <div class="badge-city">@animal.City, @animal.State</div>
+                </div>
+            </div>
+        }
+    </div>
+
+</div>
+
+
