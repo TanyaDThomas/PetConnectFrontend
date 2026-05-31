@@ -1,2 +1,112 @@
-# PetConnectFrontend
-ASP.NET Core Razor Pages application that consumes the PetConnect API to search and browse adoptable animals by location and animal type.
+# PetConnect Frontend (Razor Pages)
+
+PetConnect Frontend is an ASP.NET Core Razor Pages application that consumes a separate ASP.NET Core Web API to display adoptable animals by location and animal type.
+
+This project demonstrates how a frontend application can consume a REST API, filter data dynamically, and render a responsive UI for end users.
+
+---
+
+## Backend API
+
+This project connects to a separate backend repository:
+
+- ASP.NET Core Web API (Pet Adoption System)
+- Provides animal data via REST endpoints
+- Supports filtering by:
+  - City
+  - State
+  - Animal Type
+
+> The frontend communicates with the backend using HttpClient.
+
+---
+
+## Features
+
+- View all adoptable animals from API
+- Search animals by:
+  - City
+  - State
+  - Animal type (Dog, Cat, Bird, etc.)
+- Responsive card-based UI
+- Clean Razor Pages architecture
+- Dynamic image loading (with fallback placeholder)
+- Navigation search bar available across all pages
+
+---
+
+## How It Works
+
+1. User enters search criteria (city/state/type)
+2. Razor Page sends query to backend API
+3. API returns filtered animal data
+4. Frontend renders results dynamically
+
+---
+
+## API Integration
+
+The frontend uses an `AnimalApiClient` service to communicate with the backend.
+
+GET https://localhost:7207/api/AnimalApi/Search
+
+Example filter options:
+
+- city
+- state
+- animalTypeId
+---
+
+## Technologies Used
+
+- ASP.NET Core Razor Pages
+- C#
+- HttpClient
+- REST API
+- HTML / CSS
+- Bootstrap
+- JavaScript (light usage)
+- Git & GitHub
+
+---
+
+## Purpose of Project
+
+This project was built to demonstrate:
+
+- Consuming a REST API from a frontend application
+- Full-stack separation (frontend vs backend API)
+- Filtering and displaying dynamic data
+- Clean UI layout for data-driven applications
+
+It is intended as a portfolio project for junior software engineering roles.
+
+---
+
+## Screenshots
+
+- ### Home Page
+![Home Page](wwwroot/images/screenshots/home.png)
+
+### Search Results
+![Search Results](wwwroot/images/screenshots/results.png)
+
+---
+
+## Future Improvements
+
+- Add pagination for results
+- Improve search filtering (breed, age, etc.)
+- Add loading indicators
+- Deploy frontend + backend separately
+- Improve mobile UX
+
+---
+
+## Author
+
+Built by Tanya Thomas
+
+[GitHub:](https://github.com/TanyaDThomas)
+
+
