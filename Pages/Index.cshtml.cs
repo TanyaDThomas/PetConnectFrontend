@@ -1,5 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using PetConnectPartner.Models;
+using PetConnectPartner.Services;
 
 namespace PetConnectPartner.Pages
 {

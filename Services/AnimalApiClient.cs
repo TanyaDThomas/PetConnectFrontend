@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using PetConnectPartner.Models;
 
-namespace PetConnectPartner
+namespace PetConnectPartner.Services
 {
     public class AnimalApiClient
     {

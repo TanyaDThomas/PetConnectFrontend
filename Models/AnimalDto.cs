@@ -1,4 +1,4 @@
-﻿namespace PetConnectPartner
+﻿namespace PetConnectPartner.Models
 {
     public class AnimalDto
     {

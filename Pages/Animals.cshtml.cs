@@ -33,7 +33,8 @@
 //}
 
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using PetConnectPartner;
+using PetConnectPartner.Models;
+using PetConnectPartner.Services;
 namespace PetConnectPartner.Pages
 {
     public class AnimalsModel : PageModel

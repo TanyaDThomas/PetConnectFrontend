@@ -88,7 +88,10 @@ It is intended as a portfolio project for junior software engineering roles.
 - ### Home Page
 ![Home Page](wwwroot/images/screenshots/home.png)
 
-### Search Results
+- ### Search By City Results
+![Search Results](wwwroot/images/screenshots/cityresults.png)
+
+- ### Search By Animal Type Results
 ![Search Results](wwwroot/images/screenshots/results.png)
 
 ---
