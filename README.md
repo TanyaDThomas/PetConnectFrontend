@@ -95,7 +95,7 @@ It is intended as a portfolio project for junior software engineering roles.
 - ### Search By Animal Type Results
 ![Search Results](wwwroot/images/screenshots/results.png)
 
-- ### Home Page
+- ### Details Page
 ![Details Page](wwwroot/images/screenshots/details.png)
 
 ---
