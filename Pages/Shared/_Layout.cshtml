@@ -112,29 +112,4 @@ document.getElementById("animalToggle")
 
 
 
-    document.addEventListener("DOMContentLoaded", function () {
-
-        if (!navigator.geolocation) return;
-
-        navigator.geolocation.getCurrentPosition(function (pos) {
-
-            fetch(`https://nominatim.openstreetmap.org/reverse?lat=${pos.coords.latitude}&lon=${pos.coords.longitude}&format=json`)
-                .then(r => r.json())
-                .then(data => {
-
-                    const city = data.address.city || data.address.town || "";
-                    const state = data.address.state || "";
-
-                    const input = document.getElementById("searchInput");
-
-                    if (input) {
-                        input.value = city && state
-                            ? `${city}, ${state}`
-                            : city || state;
-                    }
-                })
-                .catch(err => console.log("Geo error:", err));
-        });
-
-    });
 </script>

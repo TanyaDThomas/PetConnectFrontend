@@ -1,4 +1,5 @@
 using PetConnectPartner.Services;
+using System.Text.Json;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,6 +10,11 @@ builder.Services.AddRazorPages();
 builder.Services.AddHttpClient<AnimalApiClient>(client =>
 {
     client.BaseAddress = new Uri("https://localhost:7207/");
+});
+
+builder.Services.Configure<JsonSerializerOptions>(options =>
+{
+    options.PropertyNameCaseInsensitive = true;
 });
 
 var app = builder.Build();

@@ -22,17 +22,18 @@ namespace PetConnectPartner.Services
         // GET ANIMALS BY TYPE OR CITY STATE - ANIMALS PAGE
         public async Task<List<AnimalDto>> SearchAnimalsAsync(string city, string state, string animalTypeName)
         {
-            // Use the exact same path pattern as GetAnimalsAsync
+            
             var url = $"api/AnimalsApi/Search?city={city}&state={state}&animalTypeName={animalTypeName}";
 
             return await _http.GetFromJsonAsync<List<AnimalDto>>(url);
         }
 
         //GET ANIMAL DETAILS BY ID - DETAILS PAGE
-        public async Task<AnimalDto?> GetAnimalByIdAsync(int id)
+        public async Task<AnimalDetailsDto?> GetAnimalByIdAsync(int id)
         {
-            // Use consistent path pattern
-            return await _http.GetFromJsonAsync<AnimalDto>($"api/AnimalsApi/{id}");
+         
+            return await _http.GetFromJsonAsync<AnimalDetailsDto>($"api/AnimalsApi/{id}");
         }
+
     }
 }

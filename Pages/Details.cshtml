@@ -1,0 +1,93 @@
+﻿
+
+@page "{id:int}"
+@model AnimalDetailsModel
+
+<div class="container mt-4">
+    <h1>@Model.Animal.Name</h1>
+    <hr />
+
+    <div class="row">
+        <div class="col-md-6 text-center">
+            <!-- Main Profile Image -->
+            <div class="position-relative d-inline-block">
+                <img src="@(string.IsNullOrEmpty(Model.Animal.ImagePath) ? "/images/placeholder.jpg" : $"https://localhost:7207/{Model.Animal.ImagePath}")" 
+                     class="rounded shadow" 
+                     style="width:300px;height:300px;object-fit:cover;" 
+                     alt="@Model.Animal.Name - Main Photo" />
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="row">
+                <div class="col-sm-6">
+                    <h4>Basic Information</h4>
+                    <hr />
+                    <dl>
+                        <dt>Name</dt>
+                        <dd>@Model.Animal.Name</dd>
+
+                        <dt>Animal Type</dt>
+                        <dd>@Model.Animal.AnimalTypeId</dd>
+
+                        <dt>Age</dt>
+                        <dd>@(Model.Animal.Age == 0 ? "Unknown" : $"{Model.Animal.Age} years old")</dd>
+
+                        <dt>Breed</dt>
+                        <dd>@Model.Animal.Breed</dd>
+
+                        <dt>Color</dt>
+                        <dd>@Model.Animal.Color</dd>
+                    </dl>
+                </div>
+
+                <div class="col-sm-6">
+                    <h4>Additional Information</h4>
+                    <hr />
+                    <dl>
+                        <dt>Adoption Fee</dt>
+                        <dd>@Model.Animal.AdoptionFee.ToString("C")</dd>
+
+                        <dt>Is Vaccinated</dt>
+                        <dd>@(Model.Animal.IsVaccinated ? "Yes" : "No")</dd>
+
+                        <dt>Special Needs</dt>
+                        <dd>@(Model.Animal.HasSpecialCareNeeds ? "Yes" : "No")</dd>
+
+                        <dt>Special Diet</dt>
+                        <dd>@(Model.Animal.HasSpecialDiet ? "Yes" : "No")</dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+    </div>
+
+ 
+    <!-- Photo Gallery Section -->
+    @if (Model.Animal.Images != null && Model.Animal.Images.Any())
+    {
+        <div class="row mt-5">
+            <div class="col-12">
+                <h4>Photo Gallery</h4>
+                <hr />
+                <div class="row">
+                    @foreach (var image in Model.Animal.Images)
+                    {
+                        <div class="col-md-3 col-sm-4 col-6 mb-3">
+                            <img src="https://localhost:7207/@image.TrimStart('/')"
+                                 class="img-fluid rounded shadow"
+                                 style="width:100%; height:200px; object-fit:cover; cursor:pointer;"
+                                 alt="Animal photo"
+                                 onclick="showImage(this.src)"
+                                 onerror="this.onerror=null; this.src='https://localhost:7207/images/placeholder.jpg';" />
+
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    }
+
+
+
+

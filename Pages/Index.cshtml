@@ -1,5 +1,4 @@
 ﻿
-
 @page "/index"
 @model IndexModel
 
@@ -14,67 +13,36 @@
     <div class="pet-grid">
         @foreach (var animal in Model.Animals)
         {
-            <div class="pet-card">
-                @if (!string.IsNullOrWhiteSpace(animal.ImagePath))
-                {
-                    <img class="pet-image" src="https://localhost:7207/@animal.ImagePath" alt="@animal.Name" />
-                }
-                else
-                {
-                    <img class="pet-image" src="/images/placeholder.jpg" alt="No image available" />
-                }
+            
+            <a asp-page="/Details" asp-route-id="@animal.Id" class="pet-card">
+                <div class="pet-card">
 
-                <div class="pet-body">
-                    <div class="pet-name">@animal.Name</div>
-                    <div class="pet-meta">@animal.Breed · @animal.Age years old</div>
-                    <div class="badge-city">@animal.City, @animal.State</div>
+                    @if (!string.IsNullOrWhiteSpace(animal.ImagePath))
+                    {
+                        <img class="pet-image"
+                             src="https://localhost:7207/@animal.ImagePath"
+                             alt="@animal.Name" />
+                    }
+                    else
+                    {
+                        <img class="pet-image"
+                             src="/images/placeholder.jpg"
+                             alt="No image available" />
+                    }
+
+                    <div class="pet-body">
+                        <div class="pet-name">@animal.Name</div>
+                        <div class="pet-meta">@animal.Breed · @animal.Age years old</div>
+                        <div class="badge-city">@animal.City, @animal.State</div>
+                        
+                    </div>
+                    <p><a href="/Details/1">TEST DETAILS</a></p>
+
                 </div>
-            </div>
+            </a>
         }
     </div>
 
 </div>
 
-
-
-@* 
-
-
-
-<h1>Find Your Perfect Pet 🐾</h1>
-
-<div class="pet-grid">
-    @foreach (var animal in Model.Animals)
-    {
        
-        <div class="pet-card">
-            
-            @* <img class ="pet-image" src="https://localhost:7207/@animal.ImagePath" alt="@animal.Name" /> *
-
-            @if (!string.IsNullOrWhiteSpace(animal.ImagePath))
-            {
-                <img class="pet-image" src="https://localhost:7207/@animal.ImagePath" alt="@animal.Name" />
-            }
-            else
-            {
-                <img class="pet-image"
-                     src="/images/placeholder.jpg"
-                     alt="No image available" />
-            }
-
-            <p>@animal.ImagePath</p>
-
-            <div class="pet-body">
-                <div class="pet-name">@animal.Name</div>
-
-                <div class="pet-meta">
-                    @animal.Breed · @animal.Age years old
-                </div>
-
-                <div class="badge-city">
-                    @animal.City, @animal.State
-                </div>
-            </div>
-        </div>
-    }
-</div> *@

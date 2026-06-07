@@ -15,10 +15,7 @@ namespace PetConnectPartner.Pages
             _api = api;
         }
 
-        //public async Task OnGetAsynce()
-        //{
-        //    Animals = await _api.GetAnimalsAsync();
-        //}
+   
         public async Task OnGetAsync()
         {
             Animals = await _api.GetAnimalsAsync();
