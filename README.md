@@ -85,14 +85,18 @@ It is intended as a portfolio project for junior software engineering roles.
 
 ## Screenshots
 
-- ### Home Page
-![Home Page](wwwroot/images/screenshots/home.png)
+## Video Demo
+
+[![Watch the demo](https://img.youtube.com/vi/L79SEZ44wFY/maxresdefault.jpg)](https://youtu.be/L79SEZ44wFY)
 
 - ### Search By City Results
 ![Search Results](wwwroot/images/screenshots/cityresults.png)
 
 - ### Search By Animal Type Results
 ![Search Results](wwwroot/images/screenshots/results.png)
+
+- ### Home Page
+![Details Page](wwwroot/images/screenshots/details.png)
 
 ---
 
