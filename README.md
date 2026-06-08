@@ -1,8 +1,24 @@
 # PetConnect Frontend (Razor Pages)
+[![Website](https://img.shields.io/badge/Customer_Site-Live-brightgreen)](https://petconnectfrontend-b8dyfah2bef7fpcp.centralus-01.azurewebsites.net)
+[![Admin](https://img.shields.io/badge/Staff_Portal-Live-blue)](https://petconnectclientportal-cdapepedgdbwd0ad.centralus-01.azurewebsites.net)
+[![Azure](https://img.shields.io/badge/Hosted_on-Azure-0078D4)](https://azure.microsoft.com)
 
 PetConnect Frontend is an ASP.NET Core Razor Pages application that consumes a separate ASP.NET Core Web API to display adoptable animals by location and animal type.
 
 This project demonstrates how a frontend application can consume a REST API, filter data dynamically, and render a responsive UI for end users.
+
+To view staff portal github, please visit here : [Pet Connect Staff Portal Github]((https://github.com/TanyaDThomas/PetConnect.git)
+
+
+---
+
+# 🚀 Live Demos
+
+- **Customer Site (Public):** [https://petconnectfrontend-b8dyfah2bef7fpcp.centralus-01.azurewebsites.net](https://petconnectfrontend-b8dyfah2bef7fpcp.centralus-01.azurewebsites.net)
+- **Staff Portal (Login Required):** [https://petconnectclientportal-cdapepedgdbwd0ad.centralus-01.azurewebsites.net](https://petconnectclientportal-cdapepedgdbwd0ad.centralus-01.azurewebsites.net)
+
+> **Demo Credentials:** (if you create a demo account)
+> Ask me for demo credentials
 
 ---
 
@@ -47,8 +63,6 @@ This project connects to a separate backend repository:
 ## API Integration
 
 The frontend uses an `AnimalApiClient` service to communicate with the backend.
-
-GET https://localhost:7207/api/AnimalApi/Search
 
 Example filter options:
 
