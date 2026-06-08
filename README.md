@@ -3,7 +3,7 @@
 [![Admin](https://img.shields.io/badge/Staff_Portal-Live-blue)](https://petconnectclientportal-cdapepedgdbwd0ad.centralus-01.azurewebsites.net)
 [![Azure](https://img.shields.io/badge/Hosted_on-Azure-0078D4)](https://azure.microsoft.com)
 
-PetConnect Frontend is an ASP.NET Core Razor Pages application that consumes a separate ASP.NET Core Web API to display adoptable animals by location and animal type.
+PetConnect Frontend is an ASP.NET Core Razor Pages application that consumes a separate ASP.NET Core Web API to display adoptable animals by location and animal type. This application is currently deployed on Azure along with the backend and database. 
 
 This project demonstrates how a frontend application can consume a REST API, filter data dynamically, and render a responsive UI for end users.
 
@@ -119,7 +119,6 @@ It is intended as a portfolio project for junior software engineering roles.
 - Add pagination for results
 - Improve search filtering (breed, age, etc.)
 - Add loading indicators
-- Deploy frontend + backend separately
 - Improve mobile UX
 
 ---
